@@ -1,0 +1,117 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(56, 56, 56);
+}
+h1{
+    font-family: 'Red Hat Mono', monospace;
+    color: beige;
+    margin-bottom: 15px;
+}
+.Section_1{
+    padding: 5px;
+    margin-top: 5%;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    flex-direction: column;
+}
+.Section_1 span{
+    margin-bottom: 25px;
+}
+.Section_1 form{
+    width: 40%;
+    height: 270px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-style: solid;
+    border-radius: 15px;
+    border-width: 1px;
+    color:beige;
+}
+.Section_1 input{
+    width: 90%;
+    height: 25px;
+    border-radius: 10px;
+    border-width: 0.5px;
+    margin-bottom: 25px;
+}
+.Section_1 input::placeholder{
+    font-family: 'Red Hat Mono', monospace;
+    color: black;
+    font-size: larger;
+    text-align: center;
+}
+.button_login{
+    width: 90%;
+    height: 25px;
+    border-radius: 10px;
+    border-width: 0.5px;
+    background-color: beige;
+
+    font-family: 'Red Hat Mono', monospace;
+    color: black;
+    font-size: large;
+    text-align: center;
+}
+
+.Section_1 h3{
+    margin-top: 9px;
+    font-family: 'Red Hat Mono', monospace;
+    font-size:medium;
+    color: beige;
+}
+.Section_1 a{
+    margin-top: 9px;
+    padding: 2px;
+    background-color: beige;
+    border-radius: 3px;
+    font-family: 'Red Hat Mono', monospace;
+    font-size:medium;
+    color:black;
+    text-decoration: none;
+}
+.child_alert{
+    margin-top: 3px;
+    font-family: 'Red Hat Mono', monospace;
+    font-size:medium;
+    padding: 3px;
+    border-radius: 10px;
+    border-style: solid;
+    border-width: 1px;
+    color:antiquewhite 
+}
+
+/* Animações */
+
+.button_login:hover{
+    width: 98%;
+    background-color: rgb(204, 204, 185);
+    cursor: pointer;
+    transition: 1s;
+}
+.button_login:active{
+    transform: translateZ(25px);
+}
+.Section_1 input:hover{
+    width: 95%;
+    background-color: rgb(204, 204, 185);
+    transition: 1s;
+}
+.login i:hover{
+    transform: rotate(360deg);
+    transition: 1s;
+}
+
+
