@@ -11,7 +11,7 @@ const routes = require('express').Router();
 //routes.get('/registerlist', registerController.register)
 routes.get('/registerget', registerController.userCheck)
 
-routes.get('/loginget', loginController.userCheckLogin)
+routes.get('/loginget', loginController.userCheck)
 
 
 

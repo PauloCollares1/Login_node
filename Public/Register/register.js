@@ -1,9 +1,10 @@
+// Grab elements from HTML
 const script_login = document.getElementById('login_html');
 const script_email = document.getElementById('email_html');
 const script_password = document.getElementById('password_html');
 let self_deleted_alert = document.getElementById('alert_div');
 
-
+// Verify if the user forgot to load or load correctly field 
 function verifyField(){
 
     if(script_login.value == "" || script_password.value == "" || script_email.value == ""){
@@ -15,7 +16,7 @@ function verifyField(){
     }
 }
 
-
+// Fetch data as a post method with my backend 
 function sendData(){
 
     const form = {
@@ -38,6 +39,7 @@ function sendData(){
     
 }
 
+// Recive data from backend and check if is ok or not at login
 function reciveData(){
 
     fetch('/registerget')
@@ -54,12 +56,11 @@ function reciveData(){
         })
 }
 
+// Fast message with a timer to let my user know what happened
 function delete_alert_sucess(){
 
     let my_alert = (`<div class="child_alert"> Account created!</div>`);
-
     self_deleted_alert.insertAdjacentHTML('afterbegin', my_alert);
-
     let soon = document.querySelector('.child_alert');
     setTimeout(() => {
         self_deleted_alert.removeChild(soon);
@@ -69,12 +70,11 @@ function delete_alert_sucess(){
     },3500)
 }
 
+// Fast message with a timer to let my user know what happened
 function delete_alert_wrong(){
 
     let my_alert = (`<div class="child_alert"> that e-mail already been taken!</div>`);
-
     self_deleted_alert.insertAdjacentHTML('afterbegin', my_alert);
-
     let soon = document.querySelector('.child_alert');
     setTimeout(() => {
         self_deleted_alert.removeChild(soon);
