@@ -27,7 +27,7 @@ function sendData(){
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify(form)
     }
-    fetch('/check', options)
+    fetch('/login', options)
     document.getElementById('login_html').value = "";
     document.getElementById('password_html').value = "";  
     setTimeout(() => {
@@ -43,10 +43,8 @@ async function reciveData(){
         .then(response => response.json())
         .then(response => {
             if(response == true){
-                console.log("Login success: " + response)
                 delete_alert_sucess();
             }else{
-                console.log("Not a match: " + response)
                 delete_alert_wrong();
             }
         })

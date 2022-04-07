@@ -12,7 +12,7 @@ async function register(req,res){
     const email = req.body.email;
 
     checkUser(email, login, pass)
-    res.sendStatus(200)
+    res.status(200)
 }
 
 // check if ther is a match at the user and mongodb
