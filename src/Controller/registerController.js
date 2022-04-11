@@ -12,15 +12,16 @@ async function register(req,res){
     const email = req.body.email;
 
     checkUser(email, login, pass)
-    res.status(200)
+    res.sendStatus(200);
 }
 
 // check if ther is a match at the user and mongodb
-async function checkUser(email, login, pass, res){
+async function checkUser(email, login, pass){
    
     let pick = await database.mongoose_model_form.findOne({db_email:email})
     if(pick){
         check = true;
+        console.log("----------------------------------");
         return console.log("that e-mail already been taken")
     }else{
         check = false;
@@ -31,11 +32,12 @@ async function checkUser(email, login, pass, res){
 // Send to front a boolean if the user can or can not login
 function userCheck(req, res){
 
-    return res.send(check);
+    return res.status(200).send(check);
 }
 
 // Save new data in mongodb
 async function saveNewUser(email, name, pass){
+    
     // Hash the password
     const salt = await bcrypt.genSalt(12);
     const hashed_pass = await bcrypt.hash(pass, salt)
@@ -46,8 +48,8 @@ async function saveNewUser(email, name, pass){
         db_pass: hashed_pass
     })
     await newData.save();
-    console.log("----------------------------------")
-    console.log("New user created: "+ name, pass); 
+    console.log("----------------------------------");
+    console.log("New user created: "+ name, hashed_pass);
 }
 
 module.exports = {register, userCheck}

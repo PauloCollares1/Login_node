@@ -58,6 +58,9 @@ function delete_alert_sucess(){
     let soon = document.querySelector('.child_alert');
     setTimeout(() => {
         self_deleted_alert.removeChild(soon);
+    },3500)
+    setTimeout(() => {
+        window.location.href = "/private"
     },3500) 
 }
 

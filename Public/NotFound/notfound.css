@@ -1,7 +1,19 @@
 body{
+    background-color: rgb(56, 56, 56);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;   
     text-align: center;
+    color: aliceblue;
+}
+
+a{
+    text-decoration: none;
+}
+button{
+    margin-top: 10px;
+    background-color: bisque;
+    width: 90px;
+    height: 30px;
 }

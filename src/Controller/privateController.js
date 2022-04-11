@@ -1,19 +1,21 @@
-require('dotenv').config();
-const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-const loginController = require('../Controller/loginControler');
+require('dotenv').config();
 
+async function access(req, res, next){
 
-
-function access(req, res, next){
-
-    const token = req.header('My-token'); 
-    
-    // isso aqui só me retorna indefinido
-    console.log('Na rota private o token é: ' + token)
-
-    next()
+    let cookie_token = await req.cookies.mytoken;
+    console.log(cookie_token)
+    if(cookie_token){
+        try {
+            await jwt.verify(cookie_token, process.env.SECRET)
+            next()
+        } catch (error) {
+            res.status(400).redirect('/notfound');
+        }
+    }else{
+        console.log("Don't have authorization")
+        return res.status(400).redirect('/notfound');
+    }
 }
-
 
 module.exports = {access}
